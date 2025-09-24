@@ -16,19 +16,20 @@
                 <input type="" class="form-control" [(ngModel)]="num2" name="num2"
                 id="exampleInputPassword1" placeholder="Enter numero 2">
             </div>
-            <hr>
-            <input type="radio" (click)="sumar()">
-            <label for="">SUMAR</label>
-            <hr>
-            <input type="radio" (click)="restar()">
-            <label for="">RESTAR</label>
-            <hr>
-            <input type="radio" (click)="mult()">
-            <label for="">MULTIPLICAR</label>
-            <input type="radio" (click)="div()">
-            <hr>
-            <label for="">DIVIDIR</label>
-
+            <div class="form-check">
+                <hr>
+                <input type="radio" class="form-check-input" name="op" [(ngModel)]="op" value="sumar">
+                <label for="">SUMAR</label>
+                <hr>
+                <input type="radio" class="form-check-input" name="op" [(ngModel)]="op" value="restar">
+                <label for="">RESTAR</label>
+                <hr>
+                <input type="radio" class="form-check-input" name="op" [(ngModel)]="op" value="mult">
+                <label for="">MULTIPLICAR</label>
+                <hr>
+                <input type="radio" class="form-check-input" name="op" [(ngModel)]="op" value="div">
+                <label for="">DIVIDIR</label>
+            </div>
         </div>
         
         <div class="col-6">

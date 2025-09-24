@@ -1,0 +1,76 @@
+<!--<p>cinepolis works!</p>-->
+
+<h1 style="text-align: center; font-family: Montserrat;">
+    Cinepolis
+</h1>
+
+<div class="cinepo">
+
+  <div class="row">
+    <div class="col-6">
+      <fieldset class="border p-2">
+
+        <legend class="w-auto">Entradas</legend>
+
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input type="text" class="form-control" id="nombre" [(ngModel)]="nombre" name="nombre">
+        </div>
+
+        <div class="form-group">
+          <label for="cantCom">Cantidad Compradores</label>
+          <input type="number" class="form-control" id="cantComp" [(ngModel)]="cantCom" name="cantCom">
+        </div>
+
+        <div class="form-group">
+
+          <label for="tarjetaCine">Tarjeta Cinepolis</label>
+          <br>
+
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="tarjetaCine" id="si" [value]="true" [(ngModel)]="tarjetaCine">
+            <label class="form-check-label" for="si">Sí</label>
+          </div>
+
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="tarjetaCine" id="no" [value]="false" [(ngModel)]="tarjetaCine">
+            <label class="form-check-label" for="no">No</label>
+          </div>
+
+        </div>
+
+        <div class="form-group">
+          <label for="cantBol">Cantidad De Boletos</label>
+          <input type="number" class="form-control" id="cantBol" [(ngModel)]="cantBol" name="cantBol">
+        </div>
+
+      </fieldset>
+    </div>
+  </div>
+  <!--   . . .   -->
+
+    <div class="row">
+        <div class="col-6">
+        </div>
+
+        <div class="col-6">
+
+        <fieldset class="border p-2">
+            <legend class="w-auto">Salidas</legend>
+            <div class="form-group">
+            <label for="valorPagar">Valor a Pagar</label>
+            <input type="text" class="form-control" id="valorPagar" [value]="valorPagar | number: '1.2-2'" readonly>
+        </div>
+
+        </fieldset>
+        <fieldset class="border p-2 mt-4">
+            <legend class="w-auto">Acciones</legend>
+            <button class="btn btn-primary mr-2" (click)="calcular()">Procesar</button>
+            <button class="btn btn-secondary">Salir</button>
+        </fieldset>
+
+        </div>
+    </div>
+
+
+</div>

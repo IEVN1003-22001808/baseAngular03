@@ -1,0 +1,40 @@
+.bandas-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.banda {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.opciones div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.circulo {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.radio-oculto {
+  display: none;
+}
+
+.radio-oculto:checked + .circulo {
+  border: 3px solid #000;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.nombre-color {
+  display: inline-block;
+  line-height: 20px;
+}

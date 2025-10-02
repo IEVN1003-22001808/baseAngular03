@@ -1,0 +1,98 @@
+<!--<p>resistencias works!</p>..>-->
+
+<!---->
+
+<div class="resistencia-container">
+
+  <h2 style="text-align: center;">Cálculo de Resistencia</h2>
+  
+  <div class="bandas-container">
+    <div class="banda">
+      <h3>1ra. Banda</h3>
+      <div class="opciones">
+        <div *ngFor="let color of colores; index as i">
+          <input type="radio" [id]="'banda1-' + i" name="banda1" [value]="color.valor" [(ngModel)]="banda1Select" class="radio-oculto">
+          <label [for]="'banda1-' + i" [style.background-color]="color.nombre" class="circulo"></label>
+          <span class="nombre-color">{{ color.nombre }}</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="banda">
+      <h3>2da. Banda</h3>
+      <div class="opciones">
+        <div *ngFor="let color of colores; index as i">
+          <input type="radio" [id]="'banda2-' + i" name="banda2" [value]="color.valor" [(ngModel)]="banda2Select" class="radio-oculto">
+          <label [for]="'banda2-' + i" [style.background-color]="color.nombre" class="circulo"></label>
+          <span class="nombre-color">{{ color.nombre }}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="banda">
+      <h3>3ra. Banda (Multiplicador)</h3>
+        <div class="opciones">
+          <div *ngFor="let color of coloresMulti; index as i">
+            <input type="radio" [id]="'banda3-' + i" name="banda3" [value]="color.multi" [(ngModel)]="multiSelect" class="radio-oculto">
+            <label [for]="'banda3-' + i" [style.background-color]="color.nombre" class="circulo"></label>
+            <span class="nombre-color"> x{{ color.multi }}</span>
+          </div>
+        </div>
+  </div>
+  </div>
+
+  <div class="row">
+  <div class="tolerancia-container">
+    <h3>Tolerancia (%)</h3>
+      <div class="opciones">
+        <div *ngFor="let tol of coloresTole; index as i ">
+          <input type="radio" [id]="'tolerancia-' + i" name="tolerancia" [value]="tol.valor" [(ngModel)]="toleSelect" class="radio-oculto">
+          <label [for]="'tolerancia-' + i" [style.background-color]="tol.nombre" class="circulo"></label>
+          <span class="nombre-color">{{ tol.tole }}</span>
+        </div>
+      </div>
+  </div>
+  </div>
+
+  <button (click)="calcular()">Calcular</button>
+
+  <hr>
+
+  <div class="container">
+  <table class="resultados-tabla col-12 text-center">
+    <thead>
+      <tr>
+        <th>Color1</th>
+        <th>Color2</th>
+        <th>Color3</th>
+        <th>Tolerancia</th>
+        <th>Valor</th>
+        <th>Valor máximo</th>
+        <th>Valor mínimo</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr>
+        <td [style.background-color]="getCV(banda1C)">
+          {{ getCV(banda1C, true) }}
+        </td>
+        <td [style.background-color]="getCV(banda2C)">
+          {{ getCV(banda2C, true) }}
+        </td>
+        <td [style.background-color]="getCMulti(multiC)">
+          {{ getCMulti(multiC, true) }}
+        </td>
+        <td [style.background-color]="getCTole(toleC)">
+          {{ getCTole(toleC, true) }}
+        </td>
+        
+        <td>{{ valor }}</td>
+        <td>{{ valorMax }}</td>
+        <td>{{ valorMin }}</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+</div>
